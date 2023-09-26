@@ -1,43 +1,32 @@
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  background(20)
-  textFont('Helvetica'); // please use CSS safe fonts
+  if (bass< 40){
+    background(250,10,29)}
+    else{
+      background(20)
+    }
+  textFont('Monaco'); // please use CSS safe fonts
   rectMode(CENTER)
-  textSize(24);
+  textSize(23);
 
-   let bar_spacing = height / 10;
-   let bar_height = width / 12;
-   let bar_pos_x = width / 2;
- 
 
-   // vocal bar is red
-   fill(200, 0, 0);
-   rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-   fill(0);
-   text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-   // drum bar is green
-   fill(0, 200, 0);
-   rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-   fill(0);
-   text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-   // bass bar is blue
-   fill(50, 50, 240);
-   rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-   fill(0);
-   text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-   // other bar is white
-   fill(200, 200, 200);
-   rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-   fill(0);
-   text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-   fill(255, 255, 0);
- 
+let orange = color(250,180,3);
+let pink = color(235,80,180);
+
+let LerpMap = map(drum,0,100,0,0)
+let middleColor = lerpColor(orange, pink, LerpMap)
+
+let Ellipsesize = map(bass,0,100,70,300);
+
+let mappedXPost = map(drum,0,100,-100,100)
+
+fill(middleColor)
+ellipse (width/2 + mappedXPost,height/2,Ellipsesize,Ellipsesize);
+
    // display "words"
+   fill(255);
    textAlign(CENTER);
    textSize(vocal);
-   text(words, width/2, height/3);
+   text(words,width/2,height/3);
 }
