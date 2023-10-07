@@ -2,9 +2,9 @@
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   if (bass< 40){
-    background(250,10,29)}
+    background(50,10,29)}
     else{
-      background(20)
+      background(20,20,20)
     }
   textFont('Monaco'); // please use CSS safe fonts
   rectMode(CENTER)
@@ -17,7 +17,7 @@ let pink = color(235,80,180);
 let LerpMap = map(drum,0,100,0,0)
 let middleColor = lerpColor(orange, pink, LerpMap)
 
-let Ellipsesize = map(bass,0,100,70,300);
+let Ellipsesize = map(bass,0,100,70,100);
 
 let mappedXPost = map(drum,0,100,-100,100)
 
