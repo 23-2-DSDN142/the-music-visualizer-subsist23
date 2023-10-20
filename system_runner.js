@@ -8,7 +8,7 @@ let textInput;
 let slider1, slider2, slider3, slider4;
 let songButton;
 
-let editorMode = true;          // false when in song mode
+let editorMode = false;          // false when in song mode
 let songLoadStatus = "loading"; // "error", "loaded"
 let song;
 let songIsPlaying = false;
@@ -42,7 +42,7 @@ function songLoadedSoFar(soFar) {
 
 function preload() {
   table = loadTable('volumes.csv', 'csv');
-  words = loadStrings('words.txt');
+  words = loadStrings('words2.txt');
 }
 
 let volumes = [];
